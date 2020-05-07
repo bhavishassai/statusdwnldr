@@ -18,7 +18,9 @@ class _ViewState extends State<View> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: PhotoView(imageProvider:FileImage(File(widget.path)) )
+        child: PhotoView(imageProvider:FileImage(File(widget.path)),
+        maxScale: PhotoViewComputedScale.covered,
+        minScale: PhotoViewComputedScale.contained*0.95, )
       ),
       
     );

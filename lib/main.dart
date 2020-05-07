@@ -1,16 +1,11 @@
-import './screens/view.dart';
+import 'package:statusdwnldr/route_generator.dart';
 import './screens/home.dart';
 import 'package:flutter/material.dart';
 
-
-void main() async {
+void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    routes: {
-      "/": (c)=>Home(),
-      "/view":(c)=>View(),
-    },
-   
-    
+    home: Home(),
+    onGenerateRoute: RouteGenerator.generateRoute,
   ));
 }
