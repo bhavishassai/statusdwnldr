@@ -17,6 +17,7 @@ class StatusRetriever with ChangeNotifier {
 
   void retrieve() async {
     List<FileSystemEntity> fse;
+    _fse = [];
    /* The function retrieve is used to retrieve the status from the whatsapp .Statuses folder.
     .Statuses is a hidden folder.
    */

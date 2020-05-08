@@ -5,12 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:statusdwnldr/logic/status_retriever.dart';
 
 
-class ImageTabView extends StatefulWidget {
-  @override
-  _ImageTabViewState createState() => _ImageTabViewState();
-}
+class ImageTabView extends StatelessWidget {
 
-class _ImageTabViewState extends State<ImageTabView> {
   @override
   Widget build(BuildContext context) {
    

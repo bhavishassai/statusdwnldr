@@ -4,20 +4,7 @@ import 'package:statusdwnldr/logic/status_retriever.dart';
 import 'widgets/image_tab_view.dart';
 import 'widgets/video_tab_view.dart';
 
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  @override
-  void initState() {
-
-    
-    super.initState();
-  }
-
-  
+class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +19,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           headerSliverBuilder: (context, boolean) {
             return <Widget>[
               SliverAppBar(
+                backgroundColor: Colors.teal,
                   forceElevated: true,
                   title: Text("Status Viewer"),
                   pinned: true,
