@@ -7,17 +7,22 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:statusdwnldr/logic/device_permission.dart';
 
 class StatusRetriever with ChangeNotifier {
-  List<FileSystemEntity> _fse = new List<FileSystemEntity>();
+  List<FileSystemEntity> _fse1 = new List<FileSystemEntity>();
+   List<FileSystemEntity> _fse2 = new List<FileSystemEntity>();
   PermissionStatus _status;
 
   //getter for FILE_SYSTEM_ENTITY
-  List<FileSystemEntity> get fileSystemEntity {
-    return _fse;
+  List<FileSystemEntity> get fileSystemImageEntity {
+    return _fse1;
+  }
+   List<FileSystemEntity> get fileSystemVideoEntity {
+    return _fse2;
   }
 
   void retrieve() async {
     List<FileSystemEntity> fse;
-    _fse = [];
+    _fse1 = []; // List is empty otherwise during hotreload list items will get duplicated
+    _fse2 = [];
    /* The function retrieve is used to retrieve the status from the whatsapp .Statuses folder.
     .Statuses is a hidden folder.
    */
@@ -30,13 +35,18 @@ class StatusRetriever with ChangeNotifier {
       // The above line will fetch all the FILE_SYSTEM_ENTITY present in .Statuses folder.
       // lookupMimeType(path) This will check whether the FILE_SYSTEM_ENTITY is image/jpeg or video/mp4
       for (var u in fse) {
+        //print(u.path);
         if (lookupMimeType(u.path) == "image/jpeg") {
-          _fse.add(u);
+          _fse1.add(u);
+        }else if(lookupMimeType(u.path) == "video/mp4"){
+          print(u);
+          _fse2.add(u);
+
         }
       }
 
       
-      notifyListeners();
+    //  notifyListeners();
     } else {
       SystemNavigator.pop();
       /* If permission is not granted the app will exit. This is recommended only for android.

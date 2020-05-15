@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:statusdwnldr/logic/status_retriever.dart';
@@ -19,12 +20,15 @@ class Home extends StatelessWidget {
           headerSliverBuilder: (context, boolean) {
             return <Widget>[
               SliverAppBar(
-                backgroundColor: Colors.teal,
+                
+                backgroundColor: Colors.green ,
                   forceElevated: true,
                   title: Text("Status Viewer"),
                   pinned: true,
                   floating: true,
-                  bottom: TabBar(tabs: <Tab>[
+                  bottom: TabBar(
+                    indicatorColor: Colors.white,
+                    tabs: <Tab>[
                     Tab(
                       text: "IMAGES",
                     ),
@@ -35,11 +39,23 @@ class Home extends StatelessWidget {
           body: TabBarView(
             children: <Widget>[
               ImageTabView(),
-              VideoTabView(),
+              VideoTabView(context:context),
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+class SomeWidget extends StatefulWidget {
+  @override
+  _SomeWidgetState createState() => _SomeWidgetState();
+}
+
+class _SomeWidgetState extends State<SomeWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Radio(value: null, groupValue: null, onChanged: null);
   }
 }

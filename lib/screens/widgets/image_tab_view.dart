@@ -14,7 +14,7 @@ class ImageTabView extends StatelessWidget {
           builder: (BuildContext context, StatusRetriever statusRetriever, Widget child) { 
             return GridView.builder(
         padding: EdgeInsets.all(2),
-        itemCount: statusRetriever.fileSystemEntity.length,
+        itemCount: statusRetriever.fileSystemImageEntity.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
         ),
@@ -28,12 +28,12 @@ class ImageTabView extends StatelessWidget {
                 child: Ink.image(
                   fit: BoxFit.cover,
                   image: FileImage(
-                    File(statusRetriever.fileSystemEntity[i].path),
+                    File(statusRetriever.fileSystemImageEntity[i].path),
                   ),
                   child: InkWell(
                     onTap: () {
                       Navigator.pushNamed(context, "/view",
-                          arguments: statusRetriever.fileSystemEntity[i].path);
+                          arguments: statusRetriever.fileSystemImageEntity[i].path);
                     },
                   ),
                 )),
