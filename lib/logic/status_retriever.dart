@@ -46,7 +46,7 @@ class StatusRetriever with ChangeNotifier {
       }
 
       
-    //  notifyListeners();
+     notifyListeners();
     } else {
       SystemNavigator.pop();
       /* If permission is not granted the app will exit. This is recommended only for android.

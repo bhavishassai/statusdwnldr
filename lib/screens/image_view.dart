@@ -1,17 +1,16 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 
-class View extends StatefulWidget {
+class ImageView extends StatefulWidget {
   final String path;
-  View({this.path});
+  ImageView({this.path});
 
   @override
-  _ViewState createState() => _ViewState();
+  _ImageViewState createState() => _ImageViewState();
 }
 
-class _ViewState extends State<View> {
+class _ImageViewState extends State<ImageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

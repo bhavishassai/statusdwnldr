@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:statusdwnldr/logic/status_retriever.dart';
@@ -32,7 +31,7 @@ class ImageTabView extends StatelessWidget {
                   ),
                   child: InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, "/view",
+                      Navigator.pushNamed(context, "/imageview",
                           arguments: statusRetriever.fileSystemImageEntity[i].path);
                     },
                   ),
@@ -49,3 +48,4 @@ class ImageTabView extends StatelessWidget {
     );
   }
 }
+
